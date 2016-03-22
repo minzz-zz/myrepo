@@ -17,9 +17,9 @@ public class j2_201511086_w3main {
         for(int i=0; i<C.length; i++)
             System.out.println("C["+i+"]="+C[i]);
         
-        Weight turtle t1 = new WeightTurtle(40);
-        Weight turtle t2 = new WeightTurtle(30);
-        Weight turtle t3 = new WeightTurtle(50);
+        WeightTurtle t1 = new WeightTurtle(40);
+        WeightTurtle t2 = new WeightTurtle(30);
+        WeightTurtle t3 = new WeightTurtle(50);
         WeightTurtle[] wt={t1, t2, t3};
         Comparator turtleComp=new TurtleComparator();
         Sorter.sort(wt, turtleComp);
