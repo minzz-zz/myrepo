@@ -4,6 +4,7 @@ interface Comparator {
     +equals(Object o):boolean
 }
 
+
 class Sorter {
     +sort(Object[], Comparator):void
 }

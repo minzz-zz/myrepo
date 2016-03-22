@@ -1,3 +1,8 @@
+/*
+ * @author mjk
+ * @since 2016.03.22
+ */
+
 package com.j2.w3;
 import java.util.Date;
 import com.sd.turtle.WeightTurtle;

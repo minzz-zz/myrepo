@@ -26,6 +26,16 @@ public class j2_201511086_w3main {
         
         for (int i=0;i<wt.length;i++)
           System.out.println("wt["+i+"]="+wt[i].getWeight());
+        
+        Date d1 = new Date("Wed, 01 Apr 2015");
+        Date d2 = new Date("Fri, 01 Apr 2016");
+        Date d3 = new Date("Mon, 21 Mar 2016");
+        Date[] dt={d1, d2, d3};
+        Comparator dateComp=new DateComparator();
+        Sorter.sort(dt, dateComp);
+        
+        for (int i=0;i<dt.length;i++)
+          System.out.println("dt["+i+"]="+dt[i].toString());
     }
 }
 
@@ -60,11 +70,9 @@ class IntegerComparator implements Comparator {
 class StringComparator implements Comparator {
     public StringComparator() {}
     public int compare(Object o1, Object o2) {
-        String s1=(String)o1;
+        String s1=(String)o1;  //compulsory type changing
         String s2=(String)o2;
         return s1.compareTo(s2);
-        //return Integer.parseInt((String) o1) -
-        //   Integer.parseInt((String) o2);
     }
 }
 
@@ -75,16 +83,14 @@ class DateComparator implements Comparator {
     }
 }
 
-class ReverseComparator implements Comparator {
-    private final Comparator c;
-    public ReverseComparator(Comparator c) {this.c = c; }
-    public int compare(Object o1, Object o2) {
-        return c.compare(o2, o1);
-    }
-}
 
 class TurtleComparator implements Comparator {
     public int compare(Object t1, Object t2) {
         return ((WeightTurtle)t1).getWeight()-((WeightTurtle)t2).getWeight();
+        
+       //make compare similar with compareTo, compareTo return int value.
+       //if a>b than, a.compareTo(b) return the value that is larger than zero.
+       //if a<b than, a.compareTo(b) return the value that is smaller than zero.
+       //if a=b than, a.compareTo(b) return the value that is zero.
     }
 }
