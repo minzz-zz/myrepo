@@ -1,12 +1,10 @@
 package com.j2.w4;
 
+import ch.aplu.turtle.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Observer;
-import java.util.Observable;
-import ch.aplu.turtle.*;
 
-class TurtleKeyListener extends Turtle {
+public class j2_201511086_w4 extends Turtle {
   public TurtleKeyListener() {
     addKeyListener(new KeyAdapter() {
     public void KeyPressed(KeyEvent e){
@@ -56,13 +54,5 @@ class TurtleKeyListener extends Turtle {
     }
   }
     });
-  }
-}
-
-public class TurtleObserverMain{
-  public static void main(String[] args){
-    TurtleKeyListener t = new TurtleKeyListener();
-    t.addStatusBar(20);
-    t.setStatusText("Press any key!");
   }
 }
