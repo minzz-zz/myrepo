@@ -19,6 +19,9 @@ public class j2_201511086_w4_mouse extends Turtle {
         forward(d);
         setStatusText("moving to "+p.toString());
       }
+      public void mouseReleased(MouseEvent e) {
+        setStatusText("Mouse is released!");
+      }
   });
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseDragged(MouseEvent e) {
