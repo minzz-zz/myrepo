@@ -1,0 +1,15 @@
+/*
+ * @author mjk
+ * @since 160404
+ */
+
+package com.j2.w5;
+
+public class Espresso extends Beverage{
+  public Espresso() {
+    description = "Espresso";
+  }
+  public double cost() {
+    return 1.99;
+  }
+}
