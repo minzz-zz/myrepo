@@ -9,7 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
 import ch.aplu.turtle.*;
-import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 public class TurtleMouseListener_Calc extends Turtle {
   public TurtleMouseListener_Calc() {
@@ -59,6 +59,7 @@ public class TurtleMouseListener_Calc extends Turtle {
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         int x, y;
+        ArrayList<String> resultStr = new ArrayList<String>();
         x=e.getX();
         y=e.getY();
         boolean inFirstRow=(y>0 && y<100);
@@ -71,45 +72,63 @@ public class TurtleMouseListener_Calc extends Turtle {
         boolean inFourthCol=(x>300 && x<400);
         if (inFirstRow && inFirstCol){
           setStatusText("1");
+          resultStr.add("1");
         }
         else if (inFirstRow && inSecondCol){
           setStatusText("2");
+          resultStr.add("2");
         }
         else if (inFirstRow && inThirdCol){
           setStatusText("3");
+          resultStr.add("3");
         }
         else if (inSecondRow && inFirstCol){
           setStatusText("4");
+          resultStr.add("4");
         }
         else if (inSecondRow && inSecondCol){
           setStatusText("5");
+          resultStr.add("5");
         }
         else if (inSecondRow && inThirdCol){
           setStatusText("6");
+          resultStr.add("6");
         }
         else if (inThirdRow && inFirstCol){
           setStatusText("7");
+          resultStr.add("7");
         }
         else if (inThirdRow && inSecondCol){
           setStatusText("8");
+          resultStr.add("8");
         }
         else if (inThirdRow && inThirdCol){
           setStatusText("9");
+          resultStr.add("9");
         }
         else if (inFirstRow && inFourthCol){
           setStatusText("+");
+          resultStr.add("+");
         }
         else if (inSecondRow && inFourthCol){
           setStatusText("-");
+          resultStr.add("-");
         }
         else if (inThirdRow && inFourthCol){
           setStatusText("*");
+          resultStr.add("*");
         }
         else if (inFourthRow && inFourthCol){
           setStatusText("/");
+          resultStr.add("/");
         }
         else if (inThirdCol && inFourthRow){
-          setStatusText("=");
+          resultStr.add("=");
+          String printResult =" ";
+          for (int i=0; i<resultStr.size(); i++){
+            printResult=printResult+resultStr.get(i);
+          }
+          setStatusText(printResult);
         }
         else{
           setStatusText("Please click again!");
