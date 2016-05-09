@@ -4,7 +4,7 @@ import java.util.*;
 
 public class IteratorTestDrive {
   public static void main (String [] args){
-    ArrayList l = new ArrayList(Arrays.asList(args));
+    ArrayList <String> l = new ArrayList <String> (Arrays.asList(args));
     Enumeration enumeration = new IteratorEnumeration(l.iterator());
     while (enumeration.hasMoreElements()){
       System.out.println(enumeration.nextElement());
