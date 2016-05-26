@@ -1,9 +1,7 @@
 package com.j2.w12.iterator;
 
 
-import java.util.Arrays;
-
-public class DinerMenu{
+public class DinerMenu implements Menu{
   static final int MAX_ITEMS = 3;
   int numberOfItems=0;
   MenuItem[] menuItems;
@@ -22,5 +20,8 @@ public class DinerMenu{
       numberOfItems = numberOfItems + 1;
     }
     //menuItems[0] = menuItem; 이렇게 하면 안됌! 어레이가 생성되지 않았음.
+  }
+  public Iterator createIterator(){
+    return new DinerIterator(menuItems);
   }
 }
