@@ -10,6 +10,9 @@ public class SoldOut implements State{
   public void insertQuarter(){
     System.out.println("You can't insert quarter, the machine is sold out");
   }
+  public void insertWrongQuarter(){
+    System.out.println("You can't insert quarter, the machine is sold out");
+  }
   public void ejectQuarter(){
     System.out.println("You can't eject, you haven't inserted a quarter yet");
   }

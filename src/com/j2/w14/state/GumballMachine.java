@@ -6,6 +6,7 @@ public class GumballMachine{
   State noQuarter;
   State hasQuarter;
   State sold;
+  State breakDown;
   
   State state = soldOut;
   int count = 0;
@@ -15,6 +16,7 @@ public class GumballMachine{
     noQuarter = new NoQuarter(this);
     hasQuarter = new HasQuarter(this);
     sold = new Sold(this);
+    breakDown = new BreakDown(this);
     
     this.count = count;
     if (count>0){
@@ -34,6 +36,9 @@ public class GumballMachine{
   public void dispense(){
     state.dispense();
   }
+  public void insertWrongQuarter(){
+    state.insertWrongQuarter();
+  }
 public void setState(State state) {
     this.state = state;
   }
@@ -48,6 +53,9 @@ public void setState(State state) {
   }
   public State getSoldOutState(){
     return soldOut;
+  }
+  public State getBreakDownState(){
+    return breakDown;
   }
   public int getCount(){
     return count;

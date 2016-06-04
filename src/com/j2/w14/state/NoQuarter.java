@@ -10,6 +10,10 @@ public class NoQuarter implements State{
     System.out.println("You inserted a quarter!");
     gumballMachine.setState(gumballMachine.getHasQuarterState());
   }
+  public void insertWrongQuarter(){
+    System.out.println("You inserted a wrong quarter!");
+    gumballMachine.setState(gumballMachine.getBreakDownState());
+  }
   public void ejectQuarter(){
     System.out.println("You haven't inserted a quarter");
   }

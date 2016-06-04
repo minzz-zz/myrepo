@@ -10,6 +10,9 @@ public class Sold implements State{
   public void insertQuarter(){
     System.out.println("Please wait, we're already giving you a gumball");
   }
+  public void insertWrongQuarter(){
+    System.out.println("Please wait, we're already giving you a gumball");
+  }
   public void ejectQuarter(){
     System.out.println("Sorry, you already turned the crank");
   }

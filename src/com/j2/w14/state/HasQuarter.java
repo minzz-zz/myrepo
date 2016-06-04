@@ -6,7 +6,9 @@ public class HasQuarter implements State{
   public HasQuarter(GumballMachine gumballMachine){
     this.gumballMachine = gumballMachine;
   }
-  
+  public void insertWrongQuarter(){
+    System.out.println("You cannot insert another quarter");
+  }
   public void insertQuarter(){
     System.out.println("You cannot insert another quarter");
   }
