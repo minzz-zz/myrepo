@@ -6,7 +6,7 @@ public class AddressTestDrive{
     addressInfo[] testBook = new addressInfo[100];
     addressBook forT = new addressBook(testBook);
     String inputU="1";
-    while(inputU != "4"){
+    while(inputU != "5"){
       inputU = forT.startProcess();
       switch(inputU){
         case "1":
@@ -17,6 +17,9 @@ public class AddressTestDrive{
           break;
         case "3":
           forT.search();
+          break;
+        case "4":
+          forT.print();
           break;
       }
     }

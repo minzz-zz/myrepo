@@ -3,7 +3,7 @@ package com.j2.w13.addressV1;
 
 import java.util.Scanner;
 
-public class addressBook{
+public class addressBook implements addressDao{
   public Scanner sc = new Scanner(System.in);
   public addressInfo[] infoSet;
   public addressBook(addressInfo[] infoSet){
@@ -18,7 +18,8 @@ public class addressBook{
     System.out.println("1: 등록");
     System.out.println("2: 삭제");
     System.out.println("3: 검색");
-    System.out.println("4: 종료");
+    System.out.println("4: 인쇄");
+    System.out.println("5: 종료");
     inputU = sc.nextLine();
     return inputU;
   }
@@ -92,6 +93,12 @@ public class addressBook{
           System.out.println("해당 번호의 사람이 없습니다.");
         }
       }
+    }
+  }
+  
+  public void print(){
+    for (int i=0; i<infoSet.length; i++){
+      System.out.println(infoSet[i].name + "/"+infoSet[i].num);
     }
   }
 }
